@@ -9,7 +9,7 @@
 
 .burger-menu {
   height: 100%;
-  width: 4em;
+  width: 4.3em;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -75,7 +75,8 @@
   flex-direction: column;
   width: 100vw;
   padding: 15rem 1rem;
-  font-size: 2rem;
+  
+  
   
 
 }
@@ -84,7 +85,7 @@
   cursor: pointer;
   padding:  3rem 0;
   border-bottom: 1px solid black;
-  ;
+  
   
 }
 

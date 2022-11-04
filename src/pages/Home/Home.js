@@ -18,7 +18,7 @@ export const Home = () => {
           </section>
           <section className={styles.hero}>
             <p className={styles.textContent2}>Você</p>
-            <p className={styles.textContent2}>Só Econtra</p>
+            <p className={styles.textContent2}>Só Encontra</p>
             <Link to="/gallery" className={styles.textContent2}><button>Aqui</button></Link>
           </section>
         </main>
