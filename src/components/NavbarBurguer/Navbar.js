@@ -38,6 +38,7 @@ export const Navbar = () => {
           <Link to="/contact">Contatos</Link>
           <Link to="/gallery">Galeria</Link>
         </div>
+
       </div>
     </div>
   )
