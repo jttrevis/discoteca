@@ -1,0 +1,38 @@
+.bgContainer {
+	background-image: url('../../../public/images/beto.jpg');
+	background-size: fill;
+	height: 60vh;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	opacity: 0.8;
+	background-position: center bottom;
+}
+
+.mainContainer {
+	display: flex;
+	max-width: 600px;
+	align-items: flex-start;
+	margin: 5rem;
+	
+
+	
+}
+
+.hero {
+	max-width: 100%;
+	padding-top: 5rem;
+
+
+	p {
+		text-align: center;
+		font-size: 6rem;
+		font-weight: bold;
+		
+		span {
+			color: var(--red-300);
+		}
+		
+		
+	}
+}
+
