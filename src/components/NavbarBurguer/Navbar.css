@@ -22,12 +22,13 @@
   height: 0.6em;
   background-color: var(--red-300);
   border-radius: 0.5em;
+  z-index: 2;
 }
 
 .menu {
   width: 50%;
   height: 100vh;
-  background-color: rgb(2, 2, 2);
+  background-color: rgba(10, 10, 10, 0.11);
   position: absolute;
   top: 0;
   z-index: -1;
@@ -40,6 +41,8 @@
 
 .visible {
   display: inherit;
+  z-index: 1;
+
 }
 
 /* ----- animations--------- */
@@ -47,6 +50,7 @@
 .burger-bar.clicked:nth-child(1){
   transform: rotate(45deg) translate(0.75em, 1.25em);
   transition: ease-out 0.5s;
+  
 }
 
 .burger-bar.clicked:nth-child(2){
@@ -71,12 +75,14 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  padding: 10rem 1rem;
+  padding: 15rem 1rem;
   font-size: 2rem;
+  
 
 }
 
 .menu-list a {
   cursor: pointer;
   padding: 1rem;
+  
 }
