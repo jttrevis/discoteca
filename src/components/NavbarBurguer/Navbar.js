@@ -34,11 +34,17 @@ export const Navbar = () => {
 
       <div className={menu_class}>
         <div className='menu-list'>
-          <Link to="/home">Inicio</Link>
+          <Link to="/">Inicio</Link>
           <Link to="/contact">Contatos</Link>
           <Link to="/gallery">Galeria</Link>
         </div>
 
+      </div>
+
+      <div className='menu-pc'>
+        <Link to="/">Inicio</Link>
+        <Link to="/contact">Contatos</Link>
+        <Link to="/gallery">Galeria</Link>
       </div>
     </div>
   )
