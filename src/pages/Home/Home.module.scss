@@ -57,12 +57,16 @@
 			height: 4rem;
 			width: 80vw;
 			font-size: 2rem;
-			background: var(--red-300);
+			background: var(--red-800);
 			border-radius: 0.5em;
-			border: 2px solid var(--red-850);
+			border: none;
 			color: white;
       box-shadow:
-        0 0 7px var(--red-850);
+				
+				0 0 7px var(--red-850),
+				0 0 10px var(--red-850),
+				0 0 21px var(--red-850);
+
 
  
         animation: pulsate2 1s infinite alternate;   
@@ -74,19 +78,12 @@
 						box-shadow:
 							0 0 4px var(--red-850),
 							0 0 11px var(--red-850),
-							0 0 19px var(--red-850),
-
-
-		
+							
 					}
 					0% {
 						/* Smaller blur radius */
-						text-shadow:
+						box-shadow:
 							0 0 2px var(--red-850),
-							0 0 4px var(--red-850),
-							0 0 6px var(--red-850),
-							0 0 10px var(--red-300),
-					
 			
 					}
 				}
