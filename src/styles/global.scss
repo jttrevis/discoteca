@@ -7,7 +7,7 @@
 
 :root {
   --white: #ffffff;
-
+  --bg: linear-gradient(to right bottom, #000000, #131212, #1f1e1e, #2a2929, #373535);
   --red-100: #ff0404;
   --red-300: #c90000;
   --red-800: #9b0000;
@@ -35,8 +35,10 @@
 
 
 body {
+  background: var(--bg);
   color: white;
-  background-image: linear-gradient(to right bottom, #000000, #131212, #1f1e1e, #2a2929, #373535);}
+  
+}
 body, input, textarea, select, button {
   font: 400 1rem "Roboto", sans-serif;
 }

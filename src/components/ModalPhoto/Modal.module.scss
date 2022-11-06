@@ -1,0 +1,75 @@
+
+
+.reactModalOverlay {
+
+  background: rgba(0, 0, 0, 0.5);
+  
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10rem;
+  
+
+}
+
+.reactModalContent {
+  width: 100%;
+  height: 100%;
+  background: var(--bg);
+  position: relative;
+  border: .5rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  
+  align-items: center;
+  
+
+  img {
+    padding: 1rem ;
+    
+
+  }
+}
+
+.container {
+  width: 100%;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+
+  .carousel {
+    cursor: grab;
+    
+  
+    .inner {
+      display: block;
+    
+    
+      .item {
+        
+        width: 100%;
+        padding: 14px;
+    
+        img{
+          width: 100%;
+          height: 90%;
+          border-radius: 1.5rem;
+          pointer-events: none;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+

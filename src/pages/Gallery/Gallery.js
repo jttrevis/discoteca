@@ -1,14 +1,45 @@
-import React from 'react'
-import { Header } from '../../components/Header/Header'
+import React from 'react';
+import { Header } from '../../components/Header/Header';
 import { Footer } from '../../components/Footer/Footer';
-
+import { useState } from 'react';
+import styles from './Gallery.module.scss';
+import { ModalPhoto } from '../../components/ModalPhoto/Modal';
 
 export const Gallery = () => {
-  return (
-    <section>
-      <Header />
+  const [isPhotoModalOpen, setIsPhotoModalOpen] = useState(false);
 
+  function handleOpenPhotoModal() {
+    setIsPhotoModalOpen(true);
+  }
+
+  function handleClosePhotoModal() {
+    setIsPhotoModalOpen(false);
+  }
+
+  return (
+    <>
+      <Header />
+      <section className={styles.container}>
+        <h3>Hospital Vera Cruz</h3>
+        <img
+          className={styles.images}
+          src='https://scontent-man2-1.xx.fbcdn.net/v/t39.30808-6/311812626_781883889801852_4873904278404945318_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=730e14&_nc_ohc=T_oMuQBgQyQAX9hQIQ0&_nc_ht=scontent-man2-1.xx&oh=00_AfC7crgHhQauy9KWsa8ElLidMDpNGDpKkBYCVR2X14Iphg&oe=636D5E9F'
+          alt=''
+        />
+        <button
+          type='button'
+          onClick={handleOpenPhotoModal}
+        >
+          Ver Fotos
+        </button>
+      </section>
       <Footer />
-    </section>
-  )
-}
+      <ModalPhoto
+        isOpen={isPhotoModalOpen}
+        onRequestClose={handleClosePhotoModal}
+      >
+
+      </ModalPhoto>
+    </>
+  );
+};
