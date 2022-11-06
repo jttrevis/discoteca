@@ -1,33 +1,30 @@
 import Modal from 'react-modal';
 import styles from './Modal.module.scss';
-import { useState, useEffect, useRef } from 'react';
-import { motion } from 'framer-motion';
+
 import { images } from '../../imagesData';
+import closeIcon from '../../assets/close.svg'
 
 export const ModalPhoto = ({ isOpen, onRequestClose }) => {
-  const carousel = useRef()
-  const [width, setWidth] = useState(0)
-  useEffect(() => {
-    setWidth(carousel.current?.scrollWidth - carousel.current?.offsetWidth)
-  }, [])
+
 
   return (
     <div>
       <Modal
+        ariaHideApp={false}
         isOpen={isOpen}
         onRequestClose={onRequestClose}
         overlayClassName={styles.reactModaOverlay}
         className={styles.reactModalContent}
       >
+        <button type='button' onClick={onRequestClose}>
+          <img className={styles.btnClose} src={closeIcon} alt="close icon X" />
+        </button>
         <div className={styles.container}>
           <div
             className={styles.carousel}
-            whileTap={{ cursor: 'grabbing' }}
+
           >
-            <div className={styles.inner}
-              drag="x"
-              dragConstraints={{ right: 0, left: - width }}
-            >
+            <div className={styles.inner}>
               {images.map((image) => (
                 <div
                   className={styles.item}
@@ -35,7 +32,7 @@ export const ModalPhoto = ({ isOpen, onRequestClose }) => {
                 >
                   <img
                     src={image}
-                    alt=''
+                    alt='imagem festa dj beto'
                   />
                 </div>
               ))}
