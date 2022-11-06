@@ -4,22 +4,24 @@
   background-color: transparent;
   display: flex;
   justify-content: flex-start;
+  align-items: center;
   padding: 1em;
 }
 
 .burger-menu {
-  height: 100%;
+  height: 60%;
   width: 4.3em;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   cursor: pointer;
+  
 }
 
 .burger-bar {
-  width: 3em;
-  height: 0.6em;
+  width: 1.5em;
+  height: 0.3em;
   background-color: var(--red-300);
   border-radius: 0.5em;
   z-index: 2;
@@ -48,7 +50,7 @@
 /* ----- animations--------- */
 /* clicked */
 .burger-bar.clicked:nth-child(1){
-  transform: rotate(45deg) translate(0.75em, 1.25em);
+  transform: rotate(45deg) translate(0.7em, .6em);
   transition: ease-out 0.5s;
   
 }
@@ -59,14 +61,14 @@
 }
 
 .burger-bar.clicked:nth-child(3){
-  transform: rotate(135deg) translate(-0.5em, 1em);
+  transform: rotate(135deg) translate(-0.45em, .4em);
   transition: ease-out 0.5s;
 }
 
 /* unclicked */
 .burger-bar.unclicked {
   transform: rotate(0) translate(0);
-  transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.5s;
+  transition: cubic-bezier(0.17, 0.885, 0.32, 1.275) 0.5s;
 }
 
 
