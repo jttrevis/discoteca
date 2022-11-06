@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './Footer.module.scss';
 export const Footer = () => {
   return (
-    <div>
+    <div className='name'>
       <footer className={styles.footerContainer}>
         <a href="https://www.instagram.com/robertotrevisol/">
           <img src="images/instagram.png" alt="instagram" />
@@ -14,8 +14,8 @@ export const Footer = () => {
           <img src="images/whatsapp.png" alt="whatsapp" />
         </a>
       </footer>
-      <span>
-        <p>Created by Junior Trevisol</p>
+      <span >
+        <p >Created by Junior Trevisol</p>
       </span>
     </div>
   )
