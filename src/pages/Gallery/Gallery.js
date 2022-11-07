@@ -21,6 +21,7 @@ export const Gallery = () => {
     <>
       <Header />
       <section className={styles.container}>
+        <h2>Eventos</h2>
         <h3>Hospital Vera Cruz</h3>
         <img
           className={styles.images}
@@ -36,15 +37,15 @@ export const Gallery = () => {
       </section>
       <section className={styles.videos}>
         <h2>Videos</h2>
-        <video controls autoplay>
-          <source src={'/videos/djbeto1.mp4'} type="video/mp4">
+        <video controls >
+          <source src='/videos/djbeto1.mp4' type="video/mp4">
           </source>
         </video>
-        <video controls autoplay muted>
+        <video controls muted>
           <source src='/videos/djbeto2.mp4' type="video/mp4">
           </source>
         </video>
-        <video controls autoplay muted>
+        <video controls muted>
           <source src='/videos/djbeto3.mp4' type="video/mp4">
           </source>
         </video>

@@ -6,15 +6,17 @@
   width: 100%;
   margin: 0 auto;
   padding: 3rem 1rem;
+  gap: 2rem;
   
   input{
     width: 100%;
     height: 2rem;
-    padding-left: 1rem;
+   
   }
 
   textarea{
-    padding-left: 1rem;
+    width: 100%;
+    height: 10rem;
   }
 
   button{
