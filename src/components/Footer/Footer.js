@@ -10,7 +10,7 @@ export const Footer = () => {
         <a href="https://www.facebook.com/roberto.trevisol">
           <img src="images/facebook.png" alt="facebook" />
         </a>
-        <a href="https://www.whatsapp.com/">
+        <a href="https://wa.me/+5545999462731">
           <img src="images/whatsapp.png" alt="whatsapp" />
         </a>
       </footer>
