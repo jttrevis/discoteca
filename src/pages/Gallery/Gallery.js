@@ -1,8 +1,9 @@
-import React from 'react';
+
+import styles from './Gallery.module.scss';
+
 import { Header } from '../../components/Header/Header';
 import { Footer } from '../../components/Footer/Footer';
 import { useState } from 'react';
-import styles from './Gallery.module.scss';
 import { ModalPhoto } from '../../components/ModalPhoto/Modal';
 
 export const Gallery = () => {
@@ -32,6 +33,21 @@ export const Gallery = () => {
         >
           Ver Fotos
         </button>
+      </section>
+      <section className={styles.videos}>
+        <h2>Videos</h2>
+        <video controls autoplay>
+          <source src={'/videos/djbeto1.mp4'} type="video/mp4">
+          </source>
+        </video>
+        <video controls autoplay muted>
+          <source src='/videos/djbeto2.mp4' type="video/mp4">
+          </source>
+        </video>
+        <video controls autoplay muted>
+          <source src='/videos/djbeto3.mp4' type="video/mp4">
+          </source>
+        </video>
       </section>
       <Footer />
       <ModalPhoto

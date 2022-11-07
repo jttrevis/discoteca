@@ -24,7 +24,7 @@
   height: 0.3em;
   background-color: var(--red-300);
   border-radius: 0.5em;
-  z-index: 2;
+  
 }
 
 .menu {
@@ -33,7 +33,7 @@
   background-color: rgba(10, 10, 10, 0.849);
   position: absolute;
   top: 0;
-  z-index: -1;
+  
 }
 
 /* ------------- sliding menu ------------------ */

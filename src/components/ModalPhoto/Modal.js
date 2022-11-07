@@ -31,11 +31,14 @@ export const ModalPhoto = ({ isOpen, onRequestClose }) => {
                   key={image}
                 >
                   <img
-                    src={image}
+                    src={image.original}
                     alt='imagem festa dj beto'
                   />
+
                 </div>
               ))}
+
+
             </div>
           </div>
         </div>

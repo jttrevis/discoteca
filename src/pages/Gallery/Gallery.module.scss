@@ -1,12 +1,15 @@
 
 .container {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   width: 100%;
   margin: 1rem auto;
   
   justify-content: center;
   align-items: center;
+  padding: 2rem 1rem;
+  border-bottom: 1px solid var(--red-800);
 
   h3 {
     font-size: 2.5rem;
@@ -15,11 +18,14 @@
 
   .images{
     margin: 2rem auto; 
+    max-width: 700px;
+    width: 100%;
   }
 
   button {
     padding: 1rem;
     width: 80%;
+    max-width: 700px;
     border: none;
     margin: 0 1rem;
     border-radius: .5rem;
@@ -33,6 +39,18 @@
     }
   }
 
+ 
 
+}
+
+.videos {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  border-bottom: 1px solid var(--red-800);
+  padding-bottom: 2rem;
 }
 
