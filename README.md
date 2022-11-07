@@ -23,9 +23,8 @@ Here are the technologies used in this project.
 - Vercel
 
 # WebSite
-  ## Click  and check the video
-  (https://www.youtube.com/watch?v=1AUGPhFqyM4)
-
+  ## Click  and check the video [here](https://www.youtube.com/watch?v=1AUGPhFqyM4)
+  
  
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
