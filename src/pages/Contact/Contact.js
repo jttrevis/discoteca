@@ -67,13 +67,13 @@ export const Contact = () => {
         />
 
         <input
-          type="text"
+          type="email"
           placeholder="Digite seu email"
           onChange={(e) => setEmail(e.target.value)}
           value={email}
         />
 
-        <input type="phone"
+        <input type="tel"
           placeholder='Telefone'
           onChange={(e) => setPhone(e.target.value)}
           value={phone}
@@ -81,6 +81,7 @@ export const Contact = () => {
 
 
         <textarea
+          type="text"
           placeholder="Digite sua mensagem..."
           onChange={(e) => setMessage(e.target.value)}
           value={message}
