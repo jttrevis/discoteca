@@ -1,62 +1,54 @@
-
 import styles from './Gallery.module.scss';
 
 import { Header } from '../../components/Header/Header';
 import { Footer } from '../../components/Footer/Footer';
-import { useState } from 'react';
+
 import { ModalPhoto } from '../../components/ModalPhoto/Modal';
 
 export const Gallery = () => {
-  const [isPhotoModalOpen, setIsPhotoModalOpen] = useState(false);
+	return (
+		<>
+			<Header />
+			<section className='flex flex-col justify-center items-center gap-4'>
+				<div className='text-2xl text-center p-2'>
+					<h2 className='text-3xl font-bold py-6 '>Eventos</h2>
+					<h3 className='text-4xl font-bold '>Hospital Vera Cruz</h3>
+				</div>
 
-  function handleOpenPhotoModal() {
-    setIsPhotoModalOpen(true);
-  }
-
-  function handleClosePhotoModal() {
-    setIsPhotoModalOpen(false);
-  }
-
-  return (
-    <>
-      <Header />
-      <section className={styles.container}>
-        <h2>Eventos</h2>
-        <h3>Hospital Vera Cruz</h3>
-        <img
-          className={styles.images}
-          src='https://scontent-man2-1.xx.fbcdn.net/v/t39.30808-6/311812626_781883889801852_4873904278404945318_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=730e14&_nc_ohc=T_oMuQBgQyQAX9hQIQ0&_nc_ht=scontent-man2-1.xx&oh=00_AfC7crgHhQauy9KWsa8ElLidMDpNGDpKkBYCVR2X14Iphg&oe=636D5E9F'
-          alt=''
-        />
-        <button
-          type='button'
-          onClick={handleOpenPhotoModal}
-        >
-          Ver Fotos
-        </button>
-      </section>
-      <section className={styles.videos}>
-        <h2>Videos</h2>
-        <video controls >
-          <source src='/videos/djbeto1.mp4' type="video/mp4">
-          </source>
-        </video>
-        <video controls muted>
-          <source src='/videos/djbeto2.mp4' type="video/mp4">
-          </source>
-        </video>
-        <video controls muted>
-          <source src='/videos/djbeto3.mp4' type="video/mp4">
-          </source>
-        </video>
-      </section>
-      <Footer />
-      <ModalPhoto
-        isOpen={isPhotoModalOpen}
-        onRequestClose={handleClosePhotoModal}
-      >
-
-      </ModalPhoto>
-    </>
-  );
+				<div className='h-[600px] w-full'>
+					<ModalPhoto />
+				</div>
+			</section>
+			<section className='flex flex-col justify-center items-center   '>
+				<h2 className='text-3xl font-bold py-10 '>Videos</h2>
+				<div className='flex flex-col gap-8 md:flex-row'>
+					<video controls>
+						<source
+							src='/videos/djbeto1.mp4'
+							type='video/mp4'
+						></source>
+					</video>
+					<video
+						controls
+						muted
+					>
+						<source
+							src='/videos/djbeto2.mp4'
+							type='video/mp4'
+						></source>
+					</video>
+					<video
+						controls
+						muted
+					>
+						<source
+							src='/videos/djbeto3.mp4'
+							type='video/mp4'
+						></source>
+					</video>
+				</div>
+			</section>
+			<Footer />
+		</>
+	);
 };

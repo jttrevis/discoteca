@@ -1,48 +1,97 @@
-import Modal from 'react-modal';
-import styles from './Modal.module.scss';
+import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs';
+import { RxDotFilled } from 'react-icons/rx';
+import { useState } from 'react';
 
-import { images } from '../../imagesData';
-import closeIcon from '../../assets/close.svg'
+const slides = [
+	{
+		url: 'images/photos/1.jpg',
+	},
+	{
+		url: 'images/photos/2.jpg',
+	},
+	{
+		url: 'images/photos/3.jpg',
+	},
 
-export const ModalPhoto = ({ isOpen, onRequestClose }) => {
+	{
+		url: 'images/photos/4.jpg',
+	},
+	{
+		url: 'images/photos/5.jpg',
+	},
+	{
+		url: 'images/photos/6.jpg',
+	},
+	{
+		url: 'images/photos/7.jpg',
+	},
 
+	{
+		url: 'images/photos/8.jpg',
+	},
 
-  return (
-    <div>
-      <Modal
-        ariaHideApp={false}
-        isOpen={isOpen}
-        onRequestClose={onRequestClose}
-        overlayClassName={styles.reactModaOverlay}
-        className={styles.reactModalContent}
-      >
-        <button type='button' onClick={onRequestClose}>
-          <img className={styles.btnClose} src={closeIcon} alt="close icon X" />
-        </button>
-        <div className={styles.container}>
-          <div
-            className={styles.carousel}
+	{
+		url: 'images/photos/9.jpg',
+	},
 
-          >
-            <div className={styles.inner}>
-              {images.map((image) => (
-                <div
-                  className={styles.item}
-                  key={image}
-                >
-                  <img
-                    src={image.original}
-                    alt='imagem festa dj beto'
-                  />
+	{
+		url: 'images/photos/10.jpg',
+	},
 
-                </div>
-              ))}
+	{
+		url: 'images/photos/11.jpg',
+	},
 
+	{
+		url: 'images/photos/12.jpg',
+	},
+];
 
-            </div>
-          </div>
-        </div>
-      </Modal>
-    </div>
-  );
+export const ModalPhoto = () => {
+	const [currentIndex, setCurrentIndex] = useState(0);
+
+	const prevSlide = () => {
+		const isFirstSlide = currentIndex === 0;
+		const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
+		setCurrentIndex(newIndex);
+	};
+	const nextSlide = () => {
+		const isLastSlide = currentIndex === slides.length - 1;
+		const newIndex = isLastSlide ? 0 : currentIndex + 1;
+		setCurrentIndex(newIndex);
+	};
+	const goToSlide = (slideIndex) => {
+		setCurrentIndex(slideIndex);
+	};
+	return (
+		<div className='px-2 w-full h-full max-w-[1020px] overflow-hidden   m-auto relative group md:max-w-[1020px] '>
+			<div
+				style={{ backgroundImage: `url(${slides[currentIndex].url})` }}
+				className='w-full h-full z-10   bg-center bg-cover bg-no-repeat duration-900 md:bg-cover  '
+			></div>
+			<div className='hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer duration-500'>
+				<BsChevronCompactLeft
+					onClick={prevSlide}
+					size={30}
+				/>
+			</div>
+			<div className='hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer duration-500'>
+				<BsChevronCompactRight
+					onClick={nextSlide}
+					size={30}
+				/>
+			</div>
+			<div className='flex rounded-2xl justify-center py-2 pb-6 '>
+				{slides.map((slide, slideIndex) => (
+					<div
+						key={slideIndex}
+						onClick={() => goToSlide(slideIndex)}
+						className='text-2xl cursor-pointer py-4 border-solid border-red-400 '
+					>
+						<RxDotFilled className='' />
+					</div>
+				))}
+			</div>
+		</div>
+	);
 };
