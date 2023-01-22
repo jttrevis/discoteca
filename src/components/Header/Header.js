@@ -12,17 +12,20 @@ export const Header = () => {
 	}, [menuMobile]);
 	return (
 		<>
-			<header className=' flex items-center justify-between mt-20 ml-6 p-4 mx-auto  '>
-				<div className='flex items-center justify-center m-auto'>
+			<header
+				style={{ backgroundImage: `url('/videos/headerBg.mp4')` }}
+				className=' flex  bg-center bg-cover items-center justify-between mt-20 ml-6 p-4 mx-auto '
+			>
+				<div className='flex items-center justify-center m-auto w-full h-full '>
 					<Link to='/'>
-						<h1>
+						<h1 className='text-[2rem] font-bold'>
 							Dj.
-							<span className='text-[4rem] text-red-600 animate-pulse'>
+							<span className='text-[5rem] font-bold text-red-600 animate-pulse'>
 								Beto
 							</span>
 						</h1>
 					</Link>
-					<ul className='hidden md:flex items-center p-8  justify-between'>
+					<ul className='hidden md:flex items-center p-8 text-[1.5rem]  justify-between'>
 						<Link
 							to='/'
 							className='p-8 font-bold hover:scale-150 duration-300'
