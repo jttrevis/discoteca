@@ -4,6 +4,7 @@ import { Header } from '../../components/Header/Header';
 import { Footer } from '../../components/Footer/Footer';
 
 import { ModalPhoto } from '../../components/ModalPhoto/Modal';
+import { BackToTopButton } from '../../components/BackToTopButton/BackToTopButton';
 
 export const Gallery = () => {
 	return (
@@ -48,6 +49,7 @@ export const Gallery = () => {
 					</video>
 				</div>
 			</section>
+			<BackToTopButton />
 			<Footer />
 		</>
 	);

@@ -1,96 +1,108 @@
-import { useState } from 'react'
-import { Header } from '../../components/Header/Header'
+import { useState } from 'react';
+import { Header } from '../../components/Header/Header';
 import { Footer } from '../../components/Footer/Footer';
-import emailjs from '@emailjs/browser'
-import styles from './Contact.module.scss'
+import emailjs from '@emailjs/browser';
+import styles from './Contact.module.scss';
 import { Toaster } from 'react-hot-toast';
 import { toast } from 'react-hot-toast';
+import { BackToTopButton } from './../../components/BackToTopButton/BackToTopButton';
 
 export const Contact = () => {
-  const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
-  const [phone, setPhone] = useState('')
-  const [message, setMessage] = useState('')
+	const [name, setName] = useState('');
+	const [email, setEmail] = useState('');
+	const [phone, setPhone] = useState('');
+	const [message, setMessage] = useState('');
 
-  function sendEmail(e) {
-    e.preventDefault()
+	function sendEmail(e) {
+		e.preventDefault();
 
-    if (name === '' || email === '' || phone === '' || message === '') {
+		if (name === '' || email === '' || phone === '' || message === '') {
+			toast('Preencha todos os campos!', {
+				icon: '❌',
+			});
+			return;
+		}
+		const templateParams = {
+			from_name: name,
+			message: message,
+			email: email,
+			phone: phone,
+		};
+		emailjs
+			.send(
+				'service_he4l8tg',
+				'template_a9jkb13',
+				templateParams,
+				'HEYhtFGyfevobvic5',
+			)
+			.then(
+				(response) => {
+					toast('Email Enviado!', {
+						icon: '✅',
+					});
+					setName('');
+					setEmail('');
+					setPhone('');
+					setMessage('');
+				},
+				(err) => {
+					toast('Erro ao enviar o Email', {
+						icon: '❌',
+					});
+				},
+			);
+	}
 
+	return (
+		<>
+			<Header />
 
+			<form
+				onSubmit={sendEmail}
+				className={styles.form}
+			>
+				<div className={styles.subtitle}>
+					<h2>Contato para mais informação</h2>
+				</div>
 
-      toast('Preencha todos os campos!', {
-        icon: '❌',
-      });
-      return
-    }
-    const templateParams = {
-      from_name: name,
-      message: message,
-      email: email,
-      phone: phone
-    }
-    emailjs.send('service_he4l8tg', 'template_a9jkb13', templateParams, 'HEYhtFGyfevobvic5')
-      .then((response) => {
-        toast('Email Enviado!', {
-          icon: '✅',
-        });
-        setName('')
-        setEmail('')
-        setPhone('')
-        setMessage('')
-      }, (err) => {
+				<input
+					type='text'
+					placeholder='Digite seu nome'
+					onChange={(e) => setName(e.target.value)}
+					value={name}
+				/>
 
-        toast("Erro ao enviar o Email", {
-          icon: '❌',
-        });
-      }
-      )
-  }
+				<input
+					type='email'
+					placeholder='Digite seu email'
+					onChange={(e) => setEmail(e.target.value)}
+					value={email}
+				/>
 
+				<input
+					type='tel'
+					placeholder='Telefone'
+					onChange={(e) => setPhone(e.target.value)}
+					value={phone}
+				/>
 
+				<textarea
+					type='text'
+					placeholder='Digite sua mensagem...'
+					onChange={(e) => setMessage(e.target.value)}
+					value={message}
+				/>
 
-  return (
-    <>
-      <Header />
-
-      <form onSubmit={sendEmail} className={styles.form}>
-        <div className={styles.subtitle}>
-          <h2>Contato para mais informação</h2>
-        </div>
-
-        <input
-          type="text"
-          placeholder="Digite seu nome"
-          onChange={(e) => setName(e.target.value)}
-          value={name}
-        />
-
-        <input
-          type="email"
-          placeholder="Digite seu email"
-          onChange={(e) => setEmail(e.target.value)}
-          value={email}
-        />
-
-        <input type="tel"
-          placeholder='Telefone'
-          onChange={(e) => setPhone(e.target.value)}
-          value={phone}
-        />
-
-
-        <textarea
-          type="text"
-          placeholder="Digite sua mensagem..."
-          onChange={(e) => setMessage(e.target.value)}
-          value={message}
-        />
-
-        <button type="submit" value="Enviar">Enviar</button>
-      </form>
-      <Toaster />
-      <Footer />
-    </>
-  )
-}
+				<button
+					type='submit'
+					value='Enviar'
+				>
+					Enviar
+				</button>
+			</form>
+			<Toaster />
+			<BackToTopButton />
+			<Footer />
+		</>
+	);
+};
