@@ -94,6 +94,7 @@ export const Header = () => {
 								spy={true}
 								smooth={true}
 								duration={600}
+								onClick={handleOpenMenuMobile}
 								to='home'
 								className='p-4 font-bold hover:opacity-60'
 							>
@@ -103,6 +104,7 @@ export const Header = () => {
 								spy={true}
 								smooth={true}
 								duration={600}
+								onClick={handleOpenMenuMobile}
 								to='gallery'
 								className='p-4 font-bold hover:opacity-60'
 							>
@@ -112,6 +114,7 @@ export const Header = () => {
 								spy={true}
 								smooth={true}
 								duration={600}
+								onClick={handleOpenMenuMobile}
 								to='contact'
 								className='p-4 font-bold hover:opacity-60 '
 							>
