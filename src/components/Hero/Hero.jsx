@@ -50,7 +50,7 @@ export const Hero = () => {
 							spy={true}
 							smooth={true}
 							duration={600}
-							to='contact'
+							to='gallery'
 							className='btn'
 						>
 							<span className='text'>Galeria</span>
