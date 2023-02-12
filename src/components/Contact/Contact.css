@@ -1,3 +1,17 @@
+input, textarea {
+  background: rgba(34, 31, 31, 0.603);
+  
+
+}
+
+textarea:focus, input:focus {
+  box-shadow: 0 0 0 0;
+  outline: 0;
+  }
+
+
+
+
 .button {
   padding: 20px 60px;
   background-color: #000;
@@ -8,7 +22,7 @@
   transition: 500ms;
 }
 
-.button span {
+.button > span {
   color: gray;
   position: relative;
   transition: 500ms;
@@ -36,7 +50,7 @@
    0 0 50px white;
 }
 
-.button div {
+.button > div {
   transition: 500ms;
   position: absolute;
   background-color: white;

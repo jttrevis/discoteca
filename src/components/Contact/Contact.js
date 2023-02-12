@@ -1,11 +1,9 @@
 import { useState } from 'react';
-import { Header } from '../../components/Header/Header';
-import { Footer } from '../../components/Footer/Footer';
+
 import emailjs from '@emailjs/browser';
 import './Contact.css';
-import { Toaster } from 'react-hot-toast';
+
 import { toast } from 'react-hot-toast';
-import { BackToTopButton } from './../../components/BackToTopButton/BackToTopButton';
 
 export const Contact = () => {
 	const [name, setName] = useState('');
@@ -56,13 +54,14 @@ export const Contact = () => {
 	return (
 		<>
 			<form
+				id='contact'
 				onSubmit={sendEmail}
 				className='flex flex-col justify-center items-center h-screen '
 			>
 				<div className='text-[3rem] p-4'>
 					<h2>Contato para mais informação</h2>
 				</div>
-				<div className='flex flex-col gap-8 w-full max-w-[25rem]'>
+				<div className='flex flex-col gap-8 w-full  max-w-[500px]'>
 					<input
 						className='h-[3rem] rounded-xl p-1'
 						type='text'

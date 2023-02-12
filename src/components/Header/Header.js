@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import logo from '../../assets/images/btl.jpg';
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
-import { Link } from 'react-router-dom';
+
 import { useCallback } from 'react';
+import { Link as Scroll } from 'react-scroll';
 
 export const Header = () => {
 	const [menuMobile, setMenuMobile] = useState(true);
@@ -13,6 +14,7 @@ export const Header = () => {
 	return (
 		<>
 			<iframe
+				id='header'
 				title='border-radius:12px'
 				src='https://open.spotify.com/embed/playlist/4j7p9P4oqzyuJYMAl7qkRP?utm_source=generator&theme=0'
 				width='100%'
@@ -23,8 +25,8 @@ export const Header = () => {
 			></iframe>
 			<header className=' flex  bg-center bg-cover items-center justify-between  ml-6 p-4 mx-auto  md:justify-center '>
 				<div className='flex items-center justify-center m-auto w-full h-full md:justify-between  '>
-					<Link
-						className='overflow-hidden '
+					<Scroll
+						className='overflow-hidden cursor-pointer '
 						to='/'
 					>
 						<img
@@ -32,27 +34,36 @@ export const Header = () => {
 							className='w-[13rem] h-full  rounded-full   '
 							src={logo}
 						/>
-					</Link>
+					</Scroll>
 
 					<ul className='hidden md:flex items-center p-8 text-[1.5rem]  justify-between'>
-						<Link
-							to='/'
+						<Scroll
+							spy={true}
+							smooth={true}
+							duration={600}
+							to='header'
 							className='p-8 font-bold hover:scale-125 hover:text-red-500 duration-300'
 						>
 							Inicio
-						</Link>
-						<Link
-							to='/contact'
-							className='p-8 font-bold hover:scale-125 hover:text-red-500 duration-300'
-						>
-							Contato
-						</Link>
-						<Link
-							to='/gallery'
+						</Scroll>
+						<Scroll
+							spy={true}
+							smooth={true}
+							duration={600}
+							to='gallery'
 							className='p-8 font-bold hover:scale-125 hover:text-red-500 duration-300'
 						>
 							Galeria
-						</Link>
+						</Scroll>
+						<Scroll
+							spy={true}
+							smooth={true}
+							duration={600}
+							to='contact'
+							className='p-8 font-bold hover:scale-125 hover:text-red-500 duration-300'
+						>
+							Contato
+						</Scroll>
 					</ul>
 				</div>
 				<div
@@ -79,24 +90,33 @@ export const Header = () => {
 						}
 					>
 						<ul className=' z-10 text-[1.3rem] gap-10 uppercase relative items-center flex flex-col pt-24 h-screen bg-black/60 '>
-							<Link
-								to={'/'}
+							<Scroll
+								spy={true}
+								smooth={true}
+								duration={600}
+								to='home'
 								className='p-4 font-bold hover:opacity-60'
 							>
 								Home
-							</Link>
-							<Link
-								to={'/contact'}
-								className='p-4 font-bold hover:opacity-60 '
-							>
-								Contatos
-							</Link>
-							<Link
-								to={'/gallery'}
+							</Scroll>
+							<Scroll
+								spy={true}
+								smooth={true}
+								duration={600}
+								to='gallery'
 								className='p-4 font-bold hover:opacity-60'
 							>
 								Galeria
-							</Link>
+							</Scroll>
+							<Scroll
+								spy={true}
+								smooth={true}
+								duration={600}
+								to='contact'
+								className='p-4 font-bold hover:opacity-60 '
+							>
+								Contatos
+							</Scroll>
 						</ul>
 					</div>
 				</div>

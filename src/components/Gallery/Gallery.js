@@ -1,13 +1,12 @@
-import { Header } from '../../components/Header/Header';
-import { Footer } from '../../components/Footer/Footer';
-
 import { ModalPhoto } from '../../components/ModalPhoto/Modal';
-import { BackToTopButton } from '../../components/BackToTopButton/BackToTopButton';
 
 export const Gallery = () => {
 	return (
 		<>
-			<section className='flex flex-col justify-center items-center gap-4'>
+			<section
+				id='gallery'
+				className='flex flex-col justify-center items-center gap-4'
+			>
 				<div className='text-2xl text-center p-2'>
 					<h2 className='text-3xl font-bold py-6 '>Eventos</h2>
 					<h3 className='text-4xl font-bold '>Hospital Vera Cruz</h3>
