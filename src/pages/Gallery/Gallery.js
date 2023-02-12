@@ -7,7 +7,6 @@ import { BackToTopButton } from '../../components/BackToTopButton/BackToTopButto
 export const Gallery = () => {
 	return (
 		<>
-			<Header />
 			<section className='flex flex-col justify-center items-center gap-4'>
 				<div className='text-2xl text-center p-2'>
 					<h2 className='text-3xl font-bold py-6 '>Eventos</h2>
@@ -47,8 +46,6 @@ export const Gallery = () => {
 					</video>
 				</div>
 			</section>
-			<BackToTopButton />
-			<Footer />
 		</>
 	);
 };

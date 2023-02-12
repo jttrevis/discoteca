@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import logo from '../../assets/images/btl.jpg';
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import { useCallback } from 'react';
@@ -12,35 +12,44 @@ export const Header = () => {
 	}, [menuMobile]);
 	return (
 		<>
-			<header
-				style={{ backgroundImage: `url('/videos/headerBg.mp4')` }}
-				className=' flex  bg-center bg-cover items-center justify-between mt-20 ml-6 p-4 mx-auto '
-			>
-				<div className='flex items-center justify-center m-auto w-full h-full '>
-					<Link to='/'>
-						<h1 className='text-[2rem] font-bold'>
-							Dj.
-							<span className='text-[5rem] font-bold text-red-600 animate-pulse'>
-								Beto
-							</span>
-						</h1>
+			<iframe
+				title='border-radius:12px'
+				src='https://open.spotify.com/embed/playlist/4j7p9P4oqzyuJYMAl7qkRP?utm_source=generator&theme=0'
+				width='100%'
+				height='80'
+				frameBorder='0'
+				allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture'
+				loading='lazy'
+			></iframe>
+			<header className=' flex  bg-center bg-cover items-center justify-between  ml-6 p-4 mx-auto  md:justify-center '>
+				<div className='flex items-center justify-center m-auto w-full h-full md:justify-between  '>
+					<Link
+						className='overflow-hidden '
+						to='/'
+					>
+						<img
+							alt='logo dj beto'
+							className='w-[13rem] h-full  rounded-full   '
+							src={logo}
+						/>
 					</Link>
+
 					<ul className='hidden md:flex items-center p-8 text-[1.5rem]  justify-between'>
 						<Link
 							to='/'
-							className='p-8 font-bold hover:scale-150 duration-300'
+							className='p-8 font-bold hover:scale-125 hover:text-red-500 duration-300'
 						>
 							Inicio
 						</Link>
 						<Link
 							to='/contact'
-							className='p-8 font-bold hover:scale-150 duration-300'
+							className='p-8 font-bold hover:scale-125 hover:text-red-500 duration-300'
 						>
 							Contato
 						</Link>
 						<Link
 							to='/gallery'
-							className='p-8 font-bold hover:scale-150 duration-300'
+							className='p-8 font-bold hover:scale-125 hover:text-red-500 duration-300'
 						>
 							Galeria
 						</Link>
@@ -48,17 +57,17 @@ export const Header = () => {
 				</div>
 				<div
 					onClick={handleOpenMenuMobile}
-					className='block md:hidden'
+					className='block  md:hidden '
 				>
 					{!menuMobile ? (
 						<AiOutlineClose
 							size={25}
-							color={'#991b1b'}
+							color={'#fff'}
 						/>
 					) : (
 						<AiOutlineMenu
 							size={25}
-							color={'#991b1b'}
+							color={'#fff'}
 						/>
 					)}
 
@@ -69,7 +78,7 @@ export const Header = () => {
 								: 'fixed z-50  h-screen left-[-60%]  ease-in-out duration-500'
 						}
 					>
-						<ul className=' z-10 uppercase relative  flex flex-col pt-24 h-screen bg-red-900/70 '>
+						<ul className=' z-10 text-[1.3rem] gap-10 uppercase relative items-center flex flex-col pt-24 h-screen bg-black/60 '>
 							<Link
 								to={'/'}
 								className='p-4 font-bold hover:opacity-60'
@@ -92,16 +101,6 @@ export const Header = () => {
 					</div>
 				</div>
 			</header>
-
-			<iframe
-				title='spotfy'
-				src='https://open.spotify.com/embed/playlist/0PG9UGqQ4bc7kYbxdyZxiq?utm_source=generator&theme=0'
-				width='100%'
-				height='80'
-				frameBorder='0'
-				allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture'
-				loading='lazy'
-			></iframe>
 		</>
 	);
 };

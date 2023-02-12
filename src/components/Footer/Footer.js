@@ -1,17 +1,20 @@
 import React from 'react';
-import styles from './Footer.module.scss';
+
+import { FaFacebookMessenger, FaInstagram, FaWhatsapp } from 'react-icons/fa';
+
 export const Footer = () => {
 	return (
-		<div className='name'>
-			<footer className={styles.footerContainer}>
+		<div className=''>
+			<footer className='flex justify-center items-center gap-8 h-full p-12 min-h-[400px]'>
 				<a
 					target='_blank'
 					rel='noreferrer'
 					href='https://www.instagram.com/robertotrevisol/'
 				>
-					<img
-						src='images/instagram.png'
-						alt='instagram'
+					<FaInstagram
+						className='h-full hover:scale-105 ease-in-out duration-300 '
+						size={35}
+						color={'#fff'}
 					/>
 				</a>
 				<a
@@ -19,9 +22,10 @@ export const Footer = () => {
 					rel='noreferrer'
 					href='https://www.facebook.com/roberto.trevisol'
 				>
-					<img
-						src='images/facebook.png'
-						alt='facebook'
+					<FaFacebookMessenger
+						className='h-full hover:scale-105 ease-in-out duration-300 '
+						size={35}
+						color={'#fff'}
 					/>
 				</a>
 				<a
@@ -29,9 +33,10 @@ export const Footer = () => {
 					rel='noreferrer'
 					href='https://wa.me/+5545999462731'
 				>
-					<img
-						src='images/whatsapp.png'
-						alt='whatsapp'
+					<FaWhatsapp
+						className='h-full hover:scale-105 ease-in-out duration-300 '
+						size={35}
+						color={'#fff'}
 					/>
 				</a>
 			</footer>

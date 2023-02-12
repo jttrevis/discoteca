@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Header } from '../../components/Header/Header';
 import { Footer } from '../../components/Footer/Footer';
 import emailjs from '@emailjs/browser';
-import styles from './Contact.module.scss';
+import './Contact.css';
 import { Toaster } from 'react-hot-toast';
 import { toast } from 'react-hot-toast';
 import { BackToTopButton } from './../../components/BackToTopButton/BackToTopButton';
@@ -55,54 +55,54 @@ export const Contact = () => {
 
 	return (
 		<>
-			<Header />
-
 			<form
 				onSubmit={sendEmail}
-				className={styles.form}
+				className='flex flex-col justify-center items-center h-screen '
 			>
-				<div className={styles.subtitle}>
+				<div className='text-[3rem] p-4'>
 					<h2>Contato para mais informação</h2>
 				</div>
+				<div className='flex flex-col gap-8 w-full max-w-[25rem]'>
+					<input
+						className='h-[3rem] rounded-xl p-1'
+						type='text'
+						placeholder='Digite seu nome'
+						onChange={(e) => setName(e.target.value)}
+						value={name}
+					/>
 
-				<input
-					type='text'
-					placeholder='Digite seu nome'
-					onChange={(e) => setName(e.target.value)}
-					value={name}
-				/>
+					<input
+						type='email'
+						placeholder='Digite seu email'
+						className='h-[3rem] rounded-xl p-1'
+						onChange={(e) => setEmail(e.target.value)}
+						value={email}
+					/>
 
-				<input
-					type='email'
-					placeholder='Digite seu email'
-					onChange={(e) => setEmail(e.target.value)}
-					value={email}
-				/>
+					<input
+						type='tel'
+						placeholder='Telefone'
+						className='h-[3rem] rounded-xl p-1'
+						onChange={(e) => setPhone(e.target.value)}
+						value={phone}
+					/>
 
-				<input
-					type='tel'
-					placeholder='Telefone'
-					onChange={(e) => setPhone(e.target.value)}
-					value={phone}
-				/>
-
-				<textarea
-					type='text'
-					placeholder='Digite sua mensagem...'
-					onChange={(e) => setMessage(e.target.value)}
-					value={message}
-				/>
-
-				<button
-					type='submit'
-					value='Enviar'
-				>
-					Enviar
+					<textarea
+						type='text'
+						className='h-[6rem] rounded-xl p-1'
+						placeholder='Digite sua mensagem...'
+						onChange={(e) => setMessage(e.target.value)}
+						value={message}
+					/>
+				</div>
+				<button className='button my-6 '>
+					<span>Enviar</span>
+					<div class='top'></div>
+					<div class='left'></div>
+					<div class='bottom'></div>
+					<div class='right'></div>
 				</button>
 			</form>
-			<Toaster />
-			<BackToTopButton />
-			<Footer />
 		</>
 	);
 };
