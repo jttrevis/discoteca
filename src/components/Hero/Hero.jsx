@@ -1,33 +1,6 @@
-// import React from 'react';
-// import { Link } from 'react-router-dom';
-// export const Hero = () => {
-// 	return (
-// 		<div className='flex  items-center justify-center '>
-// 			<main className='flex h-screen gap-3 text-center  flex-col items-center justify-center'>
-// 				<section className='flex justify-center items-center text-[3rem] gap-3'>
-// 					<p className='p-4'>Os</p>
-// 					<p className=''>
-// 						<span className=''>Melhores</span>
-// 					</p>
-// 					<p className=''>Momentos</p>
-// 				</section>
-// 				<section className='text-[2rem] '>
-// 					<p className=''>Você</p>
-// 					<p className=''>Só Encontra</p>
-// 					<Link to='/gallery'>
-// 						<button className='text-[1.5rem] bg-red-700 rounded-md w-full p-4'>
-// 							Aqui
-// 						</button>
-// 					</Link>
-// 				</section>
-// 			</main>
-// 		</div>
-// 	);
-// };
-
-import { Link } from 'react-router-dom';
 import heroImage from '../../../src/assets/images/dj.jpg';
 import './styles.css';
+import { Link as Scroll } from 'react-scroll';
 
 export const Hero = () => {
 	return (
@@ -64,19 +37,24 @@ export const Hero = () => {
 						contato agora e reviva os dias de ouro da dança.
 					</p>
 					<div className='flex items-center wrap gap-6'>
-						<Link
-							to='/contact'
+						<Scroll
+							spy={true}
+							smooth={true}
+							duration={600}
+							to='contact'
 							className='btn'
 						>
 							<span className='text'>Contato</span>
-						</Link>
-						<Link
-							to='/gallery'
-							aria-label=''
+						</Scroll>
+						<Scroll
+							spy={true}
+							smooth={true}
+							duration={600}
+							to='contact'
 							className='btn'
 						>
 							<span className='text'>Galeria</span>
-						</Link>
+						</Scroll>
 					</div>
 				</div>
 			</div>
