@@ -56,12 +56,12 @@ export const Contact = () => {
 			<form
 				id='contact'
 				onSubmit={sendEmail}
-				className='flex flex-col justify-center items-center h-screen '
+				className='flex flex-col justify-center items-center h-screen  mx-10  '
 			>
 				<div className='text-[3rem] p-4'>
 					<h2>Contato para mais informação</h2>
 				</div>
-				<div className='flex flex-col gap-8 w-full  max-w-[500px]'>
+				<div className=' flex flex-col gap-8 w-full  max-w-[500px]'>
 					<input
 						className='h-[3rem] rounded-xl p-1'
 						type='text'
