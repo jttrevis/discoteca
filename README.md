@@ -1,11 +1,12 @@
 # IS LIVE NOW : [Dj Beto](https://djbeto.vercel.app/)
+![dj](https://user-images.githubusercontent.com/105820012/225732532-7c0b36c2-9a9f-4e86-833b-9152a54cf195.png)
 
-
+https://user-images.githubusercontent.com/105820012/225732424-e45bfd75-2ef8-438b-82d7-442ca6f5ae15.mp4
 
 ## About
 This project i build using mobile first method for my brother in Brazil to use in your business working as DJ.
 
-
+![screencapture-djbeto-vercel-app-2023-03-16-19_26_44](https://user-images.githubusercontent.com/105820012/225732646-406feae6-86df-453e-94a1-2fe012a28bee.png)
 
 
 ## Technology
